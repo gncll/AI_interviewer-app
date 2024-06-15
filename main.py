@@ -16,8 +16,6 @@ if "thread_id" not in st.session_state:
 
 st.set_page_config(page_title="InterviewGPT", page_icon=":speech_balloon:")
 
-openai.api_key = "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"
-
 if st.sidebar.button("Start Chat"):
     st.session_state.start_chat = True
     thread = client.beta.threads.create()
