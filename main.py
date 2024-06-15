@@ -1,6 +1,7 @@
 import openai
 import streamlit as st
 import time
+import os
 
 assistant_id = os.getenv("ASSISTANT_ID")
 vector_store_id = os.getenv("VECTOR_STORE_ID")
