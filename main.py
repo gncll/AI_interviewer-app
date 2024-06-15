@@ -2,10 +2,10 @@ import openai
 import streamlit as st
 import time
 
-assistant_id = "asst_rAJr3TH9PDMOi0SyMqvW4yli"
-vector_store_id = "vs_zfS4U6e3kvmdL3gfxXXozKrw"
-
-client = openai
+# Load API keys from Streamlit secrets
+openai.api_key = st.secrets["openai"]["api_key"]
+assistant_id = st.secrets["openai"]["assistant_id"]
+vector_store_id = st.secrets["openai"]["vector_store_id"]
 
 if "start_chat" not in st.session_state:
     st.session_state.start_chat = False
