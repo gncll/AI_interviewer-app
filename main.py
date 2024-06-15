@@ -15,7 +15,7 @@ if "start_chat" not in st.session_state:
 if "thread_id" not in st.session_state:
     st.session_state.thread_id = None
 
-st.set_page_config(page_title="CatGPT", page_icon=":speech_balloon:")
+st.set_page_config(page_title="Interview Assistant", page_icon=":speech_balloon:")
 
 if st.sidebar.button("Start Chat"):
     st.session_state.start_chat = True
