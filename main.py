@@ -2,8 +2,8 @@ import openai
 import streamlit as st
 import time
 
-assistant_id = "asst_rAJr3TH9PDMOi0SyMqvW4yli"
-vector_store_id = "vs_zfS4U6e3kvmdL3gfxXXozKrw"
+assistant_id = os.getenv("ASSISTANT_ID")
+vector_store_id = os.getenv("VECTOR_STORE_ID")
 
 client = openai
 
@@ -14,7 +14,7 @@ if "thread_id" not in st.session_state:
 
 st.set_page_config(page_title="InterviewGPT", page_icon=":speech_balloon:")
 
-openai.api_key = "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"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 if st.sidebar.button("Start Chat"):
     st.session_state.start_chat = True
