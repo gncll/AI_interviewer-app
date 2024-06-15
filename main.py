@@ -7,7 +7,6 @@ openai.api_key = st.secrets["openai"]["api_key"]
 assistant_id = st.secrets["openai"]["assistant_id"]
 vector_store_id = st.secrets["openai"]["vector_store_id"]
 
-# Ensure the API key is set correctly
 if not openai.api_key:
     st.error("API key is not set. Please set the API key in Streamlit secrets.")
     st.stop()
@@ -29,7 +28,7 @@ if st.button("Exit Chat"):
 
 if st.session_state.start_chat:
     if "openai_model" not in st.session_state:
-        st.session_state.openai_model = "text-davinci-003"
+        st.session_state.openai_model = "text-davinci-003"  # Use a valid model name
     if "messages" not in st.session_state:
         st.session_state.messages = []
 
