@@ -3,6 +3,8 @@ import streamlit as st
 import time
 
 # Load API keys from Streamlit secrets
+client = openai
+
 openai.api_key = st.secrets["openai"]["api_key"]
 assistant_id = st.secrets["openai"]["assistant_id"]
 vector_store_id = st.secrets["openai"]["vector_store_id"]
