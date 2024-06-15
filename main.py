@@ -3,8 +3,8 @@ import streamlit as st
 import time
 import os
 
-assistant_id = os.getenv("ASSISTANT_ID")
-vector_store_id = os.getenv("VECTOR_STORE_ID")
+assistant_id = st.secrets["openai"]["assistant_id"]
+vector_store_id = st.secrets["openai"]["vector_store_id"]
 
 client = openai
 
@@ -15,7 +15,7 @@ if "thread_id" not in st.session_state:
 
 st.set_page_config(page_title="InterviewGPT", page_icon=":speech_balloon:")
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = st.secrets["openai"]["api_key"]
 
 if st.sidebar.button("Start Chat"):
     st.session_state.start_chat = True
